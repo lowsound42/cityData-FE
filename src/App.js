@@ -3,6 +3,7 @@ import DayPicker, {DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import DataFactory from './DataFactory';
 import Thing from './Table';
+import './App.css';
 
 
 
@@ -50,7 +51,7 @@ function App() {
 
 
     return (
-      <div>
+      <div className='calendar'>
         <DayPicker
           selectedDays={selectedDay}
           onDayClick={(data) => handleDayClick(data)}
@@ -65,7 +66,8 @@ function App() {
             ? selectedDay.toLocaleDateString()
             : 'Please select a day 👻'}
         </p>
-        <p>I wanted to add date ranges, but this was done as fast as possible. We can add features (and make it look nice) over the next few days</p>
+        <p>I wanted to add date ranges, but this was done as fast as possible.</p> 
+        <p>We can add features (and make it look nice) over the next few days</p>
         <p>NaN indicates 'Not a Number' if the shelter had 0 occupancy.</p>
         <p>Data is added every day at noon, after the city updates the dataset</p>
         {dataDate ? (<DataFactory date={dataDate}/>) : <p>Pick a date to load the table.</p>}
