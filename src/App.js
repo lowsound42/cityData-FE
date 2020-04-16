@@ -68,7 +68,7 @@ function App() {
         </p>
         <p>I wanted to add date ranges, but this was done as fast as possible.</p> 
         <p>We can add features (and make it look nice) over the next few days</p>
-        <p>NaN indicates 'Not a Number' if the shelter had 0 occupancy.</p>
+        <p>NaN indicates 'Not a Number' if the shelter had 0 capacity. I was lazy. Will change!</p>
         <p>Data is added every day at noon, after the city updates the dataset</p>
         {dataDate ? (<DataFactory date={dataDate}/>) : <p>Pick a date to load the table.</p>}
         {dataDate ? (<Thing arr={newArr}/>) : <p>Prepare for the world's okayest table.</p>}
