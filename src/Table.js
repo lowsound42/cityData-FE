@@ -267,6 +267,12 @@ function Thing(props) {
             filter: 'includes',
           },
           {
+            Header: 'Program Name',
+            accessor: 'PROGRAM_NAME',
+            Filter: SelectColumnFilter,
+            filter: 'includes',
+          },
+          {
             Header: 'Occupancy',
             accessor: 'OCCUPANCY',
             Filter: SelectColumnFilter,
