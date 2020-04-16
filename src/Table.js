@@ -280,7 +280,7 @@ function Thing(props) {
           },
           {
             Header: 'Occupancy Percentage',
-            accessor: 'status',
+            accessor: 'PERCENTAGE',
             Filter: SelectColumnFilter,
             filter: 'includes',
           },
@@ -289,7 +289,7 @@ function Thing(props) {
     ],
   )
 
-  const data = props.arr[0];
+  const data = props.arr;
 
   console.log(props.arr);
   return (

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import DayPicker, {DateUtils} from 'react-day-picker';
+import DayPicker, {DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import DataFactory from './DataFactory';
 import Thing from './Table';
@@ -17,12 +17,13 @@ function App() {
 
   const [selectedDay, setDay] = useState(null);
   const [dataDate, setDataDate] = useState(null);
-  const [dataURL, setDataURL] = useState('');
+  const [newArr, setNew] = useState([]);
   const [dataArr, setArr] = useState([]);
 
 
   useEffect(() => {
-    console.log(dataArr);
+    dataArr[0] ? (setNew(dataArr[0].map(v => ({...v, PERCENTAGE: (Math.round((v.OCCUPANCY/v.CAPACITY)*100))})))) : console.log(newArr)
+    console.log(newArr)
   }, [dataArr])
 
   useEffect(() => {
@@ -63,8 +64,11 @@ function App() {
             ? selectedDay.toLocaleDateString()
             : 'Please select a day 👻'}
         </p>
-        {dataDate ? (<DataFactory date={dataDate}/>) : 'TEST'}
-        {dataDate ? (<Thing arr={dataArr}/>) : 'TEST12312'}
+        <p>I wanted to add date ranges, but this was done as fast as possible. We can add features (and make it look nice) over the next few days</p>
+        <p>NaN indicates 'Not a Number' if the shelter had 0 occupancy.</p>
+        <p>Data is added every day at noon, after the city updates the dataset</p>
+        {dataDate ? (<DataFactory date={dataDate}/>) : <p>Pick a date to load the table.</p>}
+        {dataDate ? (<Thing arr={newArr}/>) : <p>Prepare for the world's okayest table.</p>}
       </div>
     );
   }
