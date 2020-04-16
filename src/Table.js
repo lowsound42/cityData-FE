@@ -220,9 +220,6 @@ function Table({ columns, data }) {
       <br />
       <div>Showing all results</div>
       <div>
-        <pre>
-          <code>{JSON.stringify(state.filters, null, 2)}</code>
-        </pre>
       </div>
     </>
   )
@@ -297,7 +294,6 @@ function Thing(props) {
 
   const data = props.arr;
 
-  console.log(props.arr);
   return (
     
     <Styles>
