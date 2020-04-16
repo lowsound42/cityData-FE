@@ -12,7 +12,7 @@ function App() {
 
 
 
-  const url = 'http://localhost:8080/shelterData/'
+  const url = 'https://blooming-castle-18936.herokuapp.com/shelterData/'
 
 
   const [selectedDay, setDay] = useState(null);
@@ -27,6 +27,7 @@ function App() {
   }, [dataArr])
 
   useEffect(() => {
+    console.log(url+dataDate);
     axios.get(url+dataDate)
     .then(function(response) {setArr([response.data])})
     .catch(function(err){console.log(err)})
