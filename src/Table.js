@@ -272,20 +272,14 @@ function Thing(props) {
           {
             Header: 'Occupancy',
             accessor: 'OCCUPANCY',
-            Filter: SelectColumnFilter,
-            filter: 'includes',
           },
           {
             Header: 'Capacity',
             accessor: 'CAPACITY',
-            Filter: SelectColumnFilter,
-            filter: 'includes',
           },
           {
             Header: 'Occupancy Percentage',
             accessor: 'PERCENTAGE',
-            Filter: SelectColumnFilter,
-            filter: 'includes',
           },
         ],
       },
