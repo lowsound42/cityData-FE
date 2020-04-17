@@ -6,7 +6,7 @@ import Thing from './Table';
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  background-color: #383838;
+  background-color: white;
   height: 100vh;
   width: 100%;
 
@@ -20,11 +20,11 @@ const Styles = styled.div`
     font-weight: bold;
     margin-top: 5rem;
     background-color: white;
-    color: #383838;
+    color: black;
   }
 
   p {
-    color: #C1B283;
+    color: black;
     font-weight: bold;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   }

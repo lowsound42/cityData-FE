@@ -6,14 +6,14 @@ import matchSorter from 'match-sorter'
 
 
 const Styles = styled.div`
-  background-color: #383838;
+  background-color: white;
 
   width: 100%;
 
   table {
     border-spacing: 0;
     border: 2px solid white;
-    color: #C1B283;
+    color: black;
     font-weight: bold;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
