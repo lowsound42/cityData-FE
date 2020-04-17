@@ -15,7 +15,6 @@ const Styles = styled.div`
     border: 2px solid white;
     color: black;
     font-weight: bold;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
     tr {
       :last-child {
