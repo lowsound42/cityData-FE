@@ -3,8 +3,33 @@ import DayPicker, {DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import DataFactory from './DataFactory';
 import Thing from './Table';
-import './App.css';
+import styled from 'styled-components';
 
+const Styles = styled.div`
+  background-color: #383838;
+  height: 100vh;
+  width: 100%;
+
+  .calendar {
+    text-align: center;
+    align-items: center;
+  }
+
+  .theActual {
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 5rem;
+    background-color: white;
+    color: #383838;
+  }
+
+  p {
+    color: #C1B283;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+
+`
 
 
 function App() {
@@ -23,7 +48,7 @@ function App() {
 
 
   useEffect(() => {
-    dataArr[0] ? (setNew(dataArr[0].map(v => ({...v, PERCENTAGE: (Math.round((v.OCCUPANCY/v.CAPACITY)*100))})))) : console.log(newArr)
+    dataArr[0] ? (setNew(dataArr[0].map(v => ({...v, PERCENTAGE: (Math.round((v.OCCUPANCY/v.CAPACITY)*100)), DISPDATE: (v.OCCUPANCY_DATE.slice(0,10))})))) : console.log(newArr)
     console.log(newArr)
   }, [dataArr])
 
@@ -51,8 +76,10 @@ function App() {
 
 
     return (
+      <>
+      <Styles>
       <div className='calendar'>
-        <DayPicker
+        <DayPicker className='theActual'
           selectedDays={selectedDay}
           onDayClick={(data) => handleDayClick(data)}
           disabledDays={[
@@ -73,6 +100,8 @@ function App() {
         {dataDate ? (<DataFactory date={dataDate}/>) : <p>Pick a date to load the table.</p>}
         {dataDate ? (<Thing arr={newArr}/>) : <p>Prepare for the world's okayest table.</p>}
       </div>
+      </Styles>
+      </>
     );
   }
 

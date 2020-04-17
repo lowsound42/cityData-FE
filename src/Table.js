@@ -6,11 +6,16 @@ import matchSorter from 'match-sorter'
 
 
 const Styles = styled.div`
-  padding: 1rem;
+  background-color: #383838;
+
+  width: 100%;
 
   table {
     border-spacing: 0;
-    border: 1px solid black;
+    border: 2px solid white;
+    color: #C1B283;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 
     tr {
       :last-child {
@@ -20,12 +25,13 @@ const Styles = styled.div`
       }
     }
 
+
     th,
     td {
       margin: 0;
       padding: 0.5rem;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
+      border-bottom: 2px solid white;
+      border-right: 2px solid white;
 
       :last-child {
         border-right: 0;
@@ -247,7 +253,7 @@ function Thing(props) {
         columns: [
           {
             Header: 'Occupancy Date',
-            accessor: 'OCCUPANCY_DATE',
+            accessor: 'DISPDATE',
             Filter: SelectColumnFilter,
             filter: 'includes',
           },
@@ -258,14 +264,9 @@ function Thing(props) {
             filter: 'includes',
           },
           {
-            Header: 'Facility Name',
-            accessor: 'FACILITY_NAME',
-            Filter: SelectColumnFilter,
-            filter: 'includes',
-          },
-          {
             Header: 'Program Name',
             accessor: 'PROGRAM_NAME',
+            style: { 'whiteSpace': 'unset' },
             Filter: SelectColumnFilter,
             filter: 'includes',
           },
