@@ -12,7 +12,7 @@ const Styles = styled.div`
 
   table {
     border-spacing: 0;
-    border: 2px solid white;
+    border: 2px solid black;
     color: black;
     font-weight: bold;
 
@@ -29,8 +29,8 @@ const Styles = styled.div`
     td {
       margin: 0;
       padding: 0.5rem;
-      border-bottom: 2px solid white;
-      border-right: 2px solid white;
+      border-bottom: 2px solid black;
+      border-right: 2px solid black;
 
       :last-child {
         border-right: 0;
