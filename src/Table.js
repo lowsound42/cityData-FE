@@ -14,7 +14,6 @@ const Styles = styled.div`
     border-spacing: 0;
     border: 2px solid black;
     color: black;
-    font-weight: bold;
 
     tr {
       :last-child {
