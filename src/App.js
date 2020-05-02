@@ -70,7 +70,11 @@ function App() {
     if (month < 10){
       month = `0${month}`;
     }
+    if (year > 2019){
     setDataDate(`${year}-${month}-${day}T00:00:00`);
+    } else if (year <= 2019){
+      setDataDate(`${year}-${month}-${day}`);
+    }
   }
 
 
