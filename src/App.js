@@ -115,6 +115,7 @@ function App() {
             : 'Please select a day 👻'}
         </p>
         <p>If you want info on the following shelters, try the buttons. They should work lol</p>
+        <p>The app is a bit buggy for sure with the new changes. You might have to click on a date more than once if you view the women's shelter data first. Okay, you'll definitely have to.</p>
         <button onClick={() => setWomensShelt('main')}>Women's Residence - Main Program</button><br/>
         <button onClick={() => setWomensShelt('weather')}>Women's Residence - Extreme Weather Program</button><br/>
         <button onClick={() => setWomensShelt('alexandra')}>Women's Residence - Alexandra Hotel</button><br/>
