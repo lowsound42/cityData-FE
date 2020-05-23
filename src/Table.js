@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import { useTable, useFilters, useGlobalFilter } from 'react-table'
 // A great library for fuzzy filtering/sorting items
@@ -285,11 +285,30 @@ function Thing(props) {
     ],
   )
 
+  var totalOcc = 0;
+
   const data = props.arr;
+  console.log(data);
+
+    const totOcc = () => {
+      totalOcc = 0;
+      for(let i = 0; i <= data.length; i++){
+        if (data[i] != undefined) 
+        {
+          totalOcc = totalOcc + data[i].OCCUPANCY
+        } 
+        else (console.log(data[i]))
+      }
+      console.log(totalOcc);
+    }
+
+    totOcc();
+
 
   return (
     
     <Styles>
+      <p>Total occupancy for this day = {totalOcc}</p>
       <Table columns={columns} data={data} />
     </Styles>
   )

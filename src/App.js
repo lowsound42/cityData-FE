@@ -114,19 +114,13 @@ function App() {
             ? selectedDay.toLocaleDateString()
             : 'Please select a day 👻'}
         </p>
-        <p>If you want info on the following shelters, try the buttons. They should work lol</p>
-        <p>The app is a bit buggy for sure with the new changes. You might have to click on a date more than once if you view the women's shelter data first. Okay, you'll definitely have to.</p>
-        <button onClick={() => setWomensShelt('main')}>Women's Residence - Main Program</button><br/>
-        <button onClick={() => setWomensShelt('weather')}>Women's Residence - Extreme Weather Program</button><br/>
-        <button onClick={() => setWomensShelt('alexandra')}>Women's Residence - Alexandra Hotel</button><br/>
-        <button onClick={() => setWomensShelt('bellwoods')}>Women's Residence - Bellwoods House</button><br/>
-        <p>I wanted to add date ranges, but this was done as fast as possible.</p> 
-        <p>We can add features (and make it look nice) over the next few days</p>
+        <p>Hacky total occupancy added above the table</p>
+        <p>Note: May 6 has data added twice, will clean up when I can</p>
         <p>NaN indicates 'Not a Number' if the shelter had 0 capacity. I was lazy. Will change!</p>
         <p>Data is added every day at noon, after the city updates the dataset</p>
         {dataDate ? (<DataFactory date={dataDate}/>) : <p>Pick a date to load the table.</p>}
         {dataDate ? (<Thing arr={newArr}/>) : <p>Prepare for the world's okayest table.</p>}
-        {womensShelt ? (<ShelterTable arr={newArr}/>) : <p>TEST</p>}
+        {womensShelt ? (<ShelterTable arr={newArr}/>) : null}
       </div>
       </Styles>
       </>
