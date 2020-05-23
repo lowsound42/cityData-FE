@@ -115,7 +115,6 @@ function App() {
             : 'Please select a day 👻'}
         </p>
         <p>Hacky total occupancy added above the table</p>
-        <p>Note: May 6 has data added twice, will clean up when I can</p>
         <p>NaN indicates 'Not a Number' if the shelter had 0 capacity. I was lazy. Will change!</p>
         <p>Data is added every day at noon, after the city updates the dataset</p>
         {dataDate ? (<DataFactory date={dataDate}/>) : <p>Pick a date to load the table.</p>}
